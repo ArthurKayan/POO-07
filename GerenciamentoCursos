@@ -30,3 +30,43 @@ public class GerenciamentoCursos {
         }
     }
 }
+
+
+//Com Ajuda da IA
+import java.util.Scanner;
+public class GerenciadorCursos {
+    private Scanner scanner;
+
+    public GerenciadorCursos() {
+        this.scanner = new Scanner(System.in);
+    }
+
+    public void iniciar() {
+        System.out.println("GERENCIAMENTO DE CURSOS");
+
+        String nomeCurso = obterEntrada("Escolha um dos cursos: ADS, CCP, ENGSOF");
+        String nivel = obterEntrada("Escolha seu nível: Iniciante, Intermediário, Avançado");
+        int cargaHoraria = obterCargaHoraria();
+        String linguagem = obterEntrada("Escolha a linguagem de programação preferível: Python, Java, Rust, C");
+
+        Curso curso = new Curso(nomeCurso, nivel, cargaHoraria, linguagem);
+
+        if (!curso.cargaHorariaValida()) {
+            System.out.println("Valor Inválido");
+        } else {
+            curso.exibirInformacoes();
+        }
+    }
+
+    private String obterEntrada(String mensagem) {
+        System.out.println(mensagem);
+        return scanner.nextLine();
+    }
+
+    private int obterCargaHoraria() {
+        System.out.println("Carga horária disponível: 120, 360, 240");
+        int carga = scanner.nextInt();
+        scanner.nextLine(); // Limpa o buffer
+        return carga;
+    }
+}
