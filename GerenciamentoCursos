@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+// Classe principal para execução
+public class GerenciamentoCursos {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("GERENCIAMENTO DE CURSOS");
+        System.out.println("Escolha um dos cursos: ADS, CCP, ENGSOF");
+        String nomeCurso = scanner.nextLine();
+
+        System.out.println("Escolha seu nível: Iniciante, Intermediário, Avançado");
+        String nivel = scanner.nextLine();
+
+        System.out.println("Carga horária disponível: 120, 360, 240");
+        int cargaHoraria = scanner.nextInt();
+        scanner.nextLine(); // Consome o \n que ficou no buffer
+
+        System.out.println("Escolha a linguagem de programação preferível: Python, Java, Rust, C");
+        String LinguagemPrograma = scanner.nextLine();
+
+        // Criando objeto Curso
+        Curso curso = new Curso(nomeCurso, nivel, cargaHoraria, LinguagemPrograma);
+
+        // Validando e exibindo informações
+        if (!curso.cargaHorariaValida()) {
+            System.out.println("Valor Inválido");
+        } else {
+            curso.exibirInformacoes();
+        }
+    }
+}
