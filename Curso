@@ -43,3 +43,32 @@ class Curso {
         System.out.println("Linguagem de programação:" + LinguagemPrograma);
     }
 }
+
+
+
+
+//Com ajuda da IA
+public class Curso {
+    private String nome;
+    private String nivel;
+    private int cargaHoraria;
+    private String linguagem;
+
+    public Curso(String nome, String nivel, int cargaHoraria, String linguagem) {
+        this.nome = nome;
+        this.nivel = nivel;
+        this.cargaHoraria = cargaHoraria;
+        this.linguagem = linguagem;
+    }
+
+    public boolean cargaHorariaValida() {
+        return cargaHoraria == 120 || cargaHoraria == 240 || cargaHoraria == 360;
+    }
+
+    public void exibirInformacoes() {
+        System.out.println("Curso: " + nome);
+        System.out.println("Nível: " + nivel);
+        System.out.println("Carga Horária: " + cargaHoraria);
+        System.out.println("Linguagem: " + linguagem);
+    }
+}
