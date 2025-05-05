@@ -1,0 +1,45 @@
+class Curso {
+    private String nomeCurso;
+    private String nivel;
+    private int cargaHoraria;
+    private String LinguagemPrograma;
+
+
+    // Construtor
+    public Curso(String nomeCurso, String nivel, int cargaHoraria, String LinguagemPrograma) {
+        this.nomeCurso = nomeCurso;
+        this.nivel = nivel;
+        this.cargaHoraria = cargaHoraria;
+        this.LinguagemPrograma = LinguagemPrograma;
+    }
+
+    // Métodos getters
+    public String getNome() {
+        return nomeCurso;
+    }
+
+    public String getNivel() {
+        return nivel;
+    }
+
+    public int getCargaHoraria() {
+        return cargaHoraria;
+    }
+
+    public String getLinguagemPrograma() {
+        return LinguagemPrograma;
+    }
+
+    // Método para validar carga horária
+    public boolean cargaHorariaValida() {
+        return cargaHoraria > 0;
+    }
+
+    // Método para exibir informações
+    public void exibirInformacoes() {
+        System.out.println("Curso: " + nomeCurso);
+        System.out.println("Nível: " + nivel);
+        System.out.println("Carga Horária: " + cargaHoraria + " horas");
+        System.out.println("Linguagem de programação:" + LinguagemPrograma);
+    }
+}
